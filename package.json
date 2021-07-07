@@ -2,7 +2,7 @@
     "name": "musix-api-types",
     "version": "0.1.0",
     "description": "global api types for musix",
-    "types": "./typings/index.d.ts",
+    "types": "./src/index.d.ts",
     "author": "MatteZ02",
     "license": "MIT",
     "devDependencies": {
