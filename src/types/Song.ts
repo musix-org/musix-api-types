@@ -8,4 +8,5 @@ export default interface Song {
     readonly longDuration?: string;
     readonly channel: string;
     readonly thumbnail: string;
+    info: null;
 }
