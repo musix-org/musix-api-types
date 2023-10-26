@@ -1,3 +1,7 @@
+export interface Players {
+    [key: string]: PlayerData;
+}
+
 export interface PlayerData {
     id: string;
     status: {
