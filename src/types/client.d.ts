@@ -1,6 +1,6 @@
 export interface ClientData {
     ready: boolean;
-    readyTimestamp: number;
+    readyTimestamp: number | null;
     shard: number | null;
-    uptime: number;
+    uptime: number | null;
 }
