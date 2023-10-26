@@ -7,6 +7,7 @@ interface Track {
 }
 
 export interface QueueData {
+    id: string;
     tracks: Track[];
     previousTracks: Track[];
     currentTrack: Track | null;
