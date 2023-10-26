@@ -3,7 +3,7 @@ import { PlayerData } from "./types/player";
 import { QueueData } from "./types/queue";
 
 declare module "musix-api-types" {
-    export enum payloadType {
+    enum payloadType {
         statusUpdate = "statusUpdate",
         playerStatusUpdate = "playerStatusUpdate",
         queueUpdate = "queueUpdate"
