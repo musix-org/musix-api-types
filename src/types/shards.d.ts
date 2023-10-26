@@ -6,5 +6,5 @@ interface Shard {
 export interface ShardsData {
     shardList: string | number[];
     shards: Shard[];
-    totalShards: number;
+    totalShards: number | "auto";
 }
