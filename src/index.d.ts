@@ -29,16 +29,6 @@ declare module "musix-api-types" {
             | ShardsData
             | AuthenticationData;
     }
-
-    export {
-        ClientData,
-        PlayerData,
-        Players,
-        QueueData,
-        SystemData,
-        ShardsData,
-        AuthenticationData,
-        PayloadType,
-        Payload
-    };
 }
+
+export { ClientData, PlayerData, Players, QueueData, SystemData, ShardsData, AuthenticationData };
