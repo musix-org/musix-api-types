@@ -23,4 +23,13 @@ declare module "musix-api-types" {
     }
 }
 
-export { ClientData, PlayerData, Players, QueueData, SystemData, ShardsData, AuthenticationData };
+export {
+    PayloadType,
+    ClientData,
+    PlayerData,
+    Players,
+    QueueData,
+    SystemData,
+    ShardsData,
+    AuthenticationData
+};
