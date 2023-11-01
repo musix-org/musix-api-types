@@ -8,16 +8,17 @@ interface AuthenticationData {
     token: string;
 }
 
+export enum PayloadType {
+    statusUpdate = "statusUpdate",
+    playerStatusUpdate = "playerStatusUpdate",
+    playerUpdate = "playerUpdate",
+    queueUpdate = "queueUpdate",
+    systemStatusUpdate = "systemStatusUpdate",
+    shardStatusUpdate = "shardStatusUpdate",
+    auth = "auth"
+}
+
 declare module "musix-api-types" {
-    enum PayloadType {
-        statusUpdate = "statusUpdate",
-        playerStatusUpdate = "playerStatusUpdate",
-        playerUpdate = "playerUpdate",
-        queueUpdate = "queueUpdate",
-        systemStatusUpdate = "systemStatusUpdate",
-        shardStatusUpdate = "shardStatusUpdate",
-        auth = "auth"
-    }
     interface Payload {
         type: PayloadType;
         data:
