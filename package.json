@@ -3,7 +3,6 @@
     "version": "0.4.0",
     "description": "global api types for musix",
     "types": "./src/index.d.ts",
-    "main": "./src/index.ts",
     "author": "MatteZ02",
     "license": "MIT",
     "devDependencies": {
