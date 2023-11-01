@@ -9,7 +9,7 @@ interface AuthenticationData {
 }
 
 declare module "musix-api-types" {
-    enum payloadType {
+    enum PayloadType {
         statusUpdate = "statusUpdate",
         playerStatusUpdate = "playerStatusUpdate",
         playerUpdate = "playerUpdate",
@@ -19,7 +19,7 @@ declare module "musix-api-types" {
         auth = "auth"
     }
     interface Payload {
-        type: payloadType;
+        type: PayloadType;
         data:
             | ClientData
             | PlayerData
@@ -29,4 +29,16 @@ declare module "musix-api-types" {
             | ShardsData
             | AuthenticationData;
     }
+
+    export {
+        ClientData,
+        PlayerData,
+        Players,
+        QueueData,
+        SystemData,
+        ShardsData,
+        AuthenticationData,
+        PayloadType,
+        Payload
+    };
 }
