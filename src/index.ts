@@ -1,4 +1,4 @@
-export enum PayloadType {
+enum PayloadType {
     statusUpdate = "statusUpdate",
     playerStatusUpdate = "playerStatusUpdate",
     playerUpdate = "playerUpdate",
@@ -7,3 +7,5 @@ export enum PayloadType {
     shardStatusUpdate = "shardStatusUpdate",
     auth = "auth"
 }
+
+export { PayloadType };
