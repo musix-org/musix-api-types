@@ -1,5 +1,8 @@
 export interface Players {
-    [key: string]: PlayerData;
+    shard: number;
+    players: {
+        [key: string]: PlayerData;
+    };
 }
 
 export interface PlayerData {
