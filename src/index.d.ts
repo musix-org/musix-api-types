@@ -5,7 +5,9 @@ import { ShardsData } from "./types/shards";
 import { SystemData } from "./types/system";
 
 interface AuthenticationData {
-    token: string;
+    data: {
+        token: string;
+    };
 }
 
 export type PayloadType =
