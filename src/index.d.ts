@@ -1,6 +1,26 @@
 import { ClientData } from "./types/client";
-import { PlayerData, Players, SetPlayerChannel, SetPlayerFilter, SetPlayerPause, SetPlayerPlay, SetPlayerPrevious, SetPlayerRemoveSong, SetPlayerReplay, SetPlayerResume, SetPlayerSeek, SetPlayerShuffle, SetPlayerSkip, SetPlayerSkipTo, SetPlayerStop } from "./types/player";
-import { QueueData } from "./types/queue";
+import {
+    PlayerData,
+    Players,
+    SetPlayerChannel,
+    SetPlayerFilter,
+    SetPlayerPause,
+    SetPlayerPlay,
+    SetPlayerPrevious,
+    SetPlayerReplay,
+    SetPlayerResume,
+    SetPlayerSeek,
+    SetPlayerSkip,
+    SetPlayerSkipTo,
+    SetPlayerStop
+} from "./types/player";
+import {
+    QueueData,
+    SetQueueAdd,
+    SetQueueShuffle,
+    SetQueueSlice,
+    SetQueueSplice
+} from "./types/queue";
 import { ShardsData } from "./types/shards";
 import { SystemData } from "./types/system";
 
@@ -11,13 +31,13 @@ interface AuthenticationData {
 }
 
 export type PayloadType =
-    "auth"
+    | "auth"
     | "statusUpdate"
     | "playerStatusUpdate"
     | "playerUpdate"
     | "queueUpdate"
     | "systemStatusUpdate"
-    | "shardStatusUpdate"
+    | "shardStatusUpdate";
 /*{
     statusUpdate = "statusUpdate",
     playerStatusUpdate = "playerStatusUpdate",
@@ -46,8 +66,6 @@ declare module "musix-api-types" {
         data:
             | SetPlayerPlay
             | SetPlayerChannel
-            | SetPlayerRemoveSong
-            | SetPlayerShuffle
             | SetPlayerReplay
             | SetPlayerSeek
             | SetPlayerSkip
@@ -56,9 +74,13 @@ declare module "musix-api-types" {
             | SetPlayerPrevious
             | SetPlayerPause
             | SetPlayerResume
-            | SetPlayerFilter
+            | SetPlayerFilter;
     }
 
+    interface SetQueuePayload {
+        type: "setQueue";
+        data: SetQueueAdd | SetQueueSplice | SetQueueSlice | SetQueueShuffle;
+    }
 }
 
 export { ClientData, PlayerData, Players, QueueData, SystemData, ShardsData, AuthenticationData };

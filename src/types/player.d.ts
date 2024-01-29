@@ -37,15 +37,6 @@ export interface SetPlayerChannel extends BaseSetPlayer {
     channel: string;
 }
 
-export interface SetPlayerRemoveSong extends BaseSetPlayer {
-    type: "remove";
-    index: number;
-}
-
-export interface SetPlayerShuffle extends BaseSetPlayer {
-    type: "shuffle";
-}
-
 export interface SetPlayerReplay extends BaseSetPlayer {
     type: "replay";
 }

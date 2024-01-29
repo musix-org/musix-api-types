@@ -13,3 +13,30 @@ export interface QueueData {
     previousTracks: Track[];
     currentTrack: Track | null;
 }
+
+interface BaseSetQueue {
+    type: string;
+    id: string;
+}
+
+export interface SetQueueAdd extends BaseSetQueue {
+    type: "add";
+    track: Track;
+}
+
+export interface SetQueueSplice extends BaseSetQueue {
+    type: "splice";
+    index1: number;
+    index2: number;
+    item?: Track;
+}
+
+export interface SetQueueSlice extends BaseSetQueue {
+    type: "slice";
+    start: number;
+    end: number;
+}
+
+export interface SetQueueShuffle extends BaseSetQueue {
+    type: "shuffle";
+}
