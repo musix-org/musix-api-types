@@ -4,6 +4,7 @@ interface Track {
     author: string;
     length: number;
     position: number;
+    type: string;
 }
 
 export interface QueueData {
