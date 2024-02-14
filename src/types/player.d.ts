@@ -1,5 +1,17 @@
 import { Track } from "./queue";
 
+type filter =
+    | "3D"
+    | "bass"
+    | "nightcore"
+    | "phaser"
+    | "pulsator"
+    | "tremolo"
+    | "vaporwave"
+    | "vibrato"
+    | "treble"
+    | "volume";
+
 export interface Players {
     shard: number;
     players: {
@@ -50,7 +62,7 @@ export interface SetPlayerSkip extends BaseSetPlayer {
     type: "skip";
 }
 
-export interface SetPlayerSkipTo extends BaseSetPlayer {    
+export interface SetPlayerSkipTo extends BaseSetPlayer {
     type: "skipTo";
     index: number;
 }
@@ -73,6 +85,6 @@ export interface SetPlayerResume extends BaseSetPlayer {
 
 export interface SetPlayerFilter extends BaseSetPlayer {
     type: "filter";
-    filter: string;
+    filter: filter;
     value: boolean | number;
 }
