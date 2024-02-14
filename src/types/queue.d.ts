@@ -21,14 +21,14 @@ interface BaseSetQueue {
 
 export interface SetQueueAdd extends BaseSetQueue {
     type: "add";
-    track: Track;
+    track: string;
 }
 
 export interface SetQueueSplice extends BaseSetQueue {
     type: "splice";
     index1: number;
     index2: number;
-    item?: Track;
+    item?: string;
 }
 
 export interface SetQueueSlice extends BaseSetQueue {
