@@ -38,6 +38,8 @@ export type PayloadType =
     | "queueUpdate"
     | "systemStatusUpdate"
     | "shardStatusUpdate";
+
+export type SetPayloadtype = "setPlayer" | "setQueue";
 /*{
     statusUpdate = "statusUpdate",
     playerStatusUpdate = "playerStatusUpdate",
@@ -59,6 +61,26 @@ declare module "musix-api-types" {
             | SystemData
             | ShardsData
             | AuthenticationData;
+    }
+
+    interface SetPayload {
+        type: SetPayloadtype;
+        data:
+            | SetPlayerPlay
+            | SetPlayerChannel
+            | SetPlayerReplay
+            | SetPlayerSeek
+            | SetPlayerSkip
+            | SetPlayerSkipTo
+            | SetPlayerStop
+            | SetPlayerPrevious
+            | SetPlayerPause
+            | SetPlayerResume
+            | SetPlayerFilter
+            | SetQueueAdd
+            | SetQueueSplice
+            | SetQueueSlice
+            | SetQueueShuffle;
     }
 
     interface SetPlayerPayload {
