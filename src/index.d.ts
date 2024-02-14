@@ -51,57 +51,49 @@ export type SetPayloadtype = "setPlayer" | "setQueue";
 }*/
 
 declare module "musix-api-types" {
+    type PayloadDataType =
+        | ClientData
+        | PlayerData
+        | Players
+        | QueueData
+        | SystemData
+        | ShardsData
+        | AuthenticationData;
+
     interface Payload {
         type: PayloadType;
-        data:
-            | ClientData
-            | PlayerData
-            | Players
-            | QueueData
-            | SystemData
-            | ShardsData
-            | AuthenticationData;
+        data: PayloadDataType;
     }
+
+    type SetPayloadDataType = SetPlayerPayloadDataType | SetQueuePayloadDataType;
 
     interface SetPayload {
         type: SetPayloadtype;
-        data:
-            | SetPlayerPlay
-            | SetPlayerChannel
-            | SetPlayerReplay
-            | SetPlayerSeek
-            | SetPlayerSkip
-            | SetPlayerSkipTo
-            | SetPlayerStop
-            | SetPlayerPrevious
-            | SetPlayerPause
-            | SetPlayerResume
-            | SetPlayerFilter
-            | SetQueueAdd
-            | SetQueueSplice
-            | SetQueueSlice
-            | SetQueueShuffle;
+        data: SetPayloadDataType;
     }
+
+    type SetPlayerPayloadDataType =
+        | SetPlayerPlay
+        | SetPlayerChannel
+        | SetPlayerReplay
+        | SetPlayerSeek
+        | SetPlayerSkip
+        | SetPlayerSkipTo
+        | SetPlayerStop
+        | SetPlayerPrevious
+        | SetPlayerPause
+        | SetPlayerResume
+        | SetPlayerFilter;
 
     interface SetPlayerPayload {
         type: "setPlayer";
-        data:
-            | SetPlayerPlay
-            | SetPlayerChannel
-            | SetPlayerReplay
-            | SetPlayerSeek
-            | SetPlayerSkip
-            | SetPlayerSkipTo
-            | SetPlayerStop
-            | SetPlayerPrevious
-            | SetPlayerPause
-            | SetPlayerResume
-            | SetPlayerFilter;
+        data: SetPlayerPayloadDataType;
     }
 
+    type SetQueuePayloadDataType = SetQueueAdd | SetQueueSplice | SetQueueSlice | SetQueueShuffle;
     interface SetQueuePayload {
         type: "setQueue";
-        data: SetQueueAdd | SetQueueSplice | SetQueueSlice | SetQueueShuffle;
+        data: SetQueuePayloadDataType;
     }
 }
 
