@@ -63,6 +63,7 @@ declare module "musix-api-types" {
     interface Payload {
         type: PayloadType;
         data: PayloadDataType;
+        token: string;
     }
 
     type SetPayloadDataType = SetPlayerPayloadDataType | SetQueuePayloadDataType;
