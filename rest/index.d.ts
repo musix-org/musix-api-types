@@ -1,6 +1,6 @@
 import { APIPartialGuild } from "discord-api-types/v10";
-import { QueueData, Track } from "./types/queue";
-import { PlayerData } from "./types/player";
+import { QueueData, Track } from "../types/queue";
+import { PlayerData } from "../types/player";
 
 interface BaseRequest {
     id: string;
