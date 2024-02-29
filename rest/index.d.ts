@@ -74,9 +74,6 @@ declare module "musix-api-types/rest" {
     // POST queue/shuffle
     type QueueShuffleRequest = BaseRequest & {};
     type QueueShuffleResponse = BaseResponse & {};
-    // POST login
-    type LoginRequest = {};
-    type LoginResponse = {};
     // GET guilds
     type GuildsResponse = {
         guilds: APIPartialGuild[];
