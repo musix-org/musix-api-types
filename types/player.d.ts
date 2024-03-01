@@ -19,18 +19,20 @@ export interface Players {
     };
 }
 
+export interface PlayerStatus {
+    playing: boolean;
+    paused: boolean;
+    looping: boolean;
+    songLooping: boolean;
+    stopped: boolean;
+    errored: boolean;
+    startTime: null | number;
+    autoplay: boolean;
+}
+
 export interface PlayerData {
     id: string;
-    status: {
-        playing: boolean;
-        paused: boolean;
-        looping: boolean;
-        songLooping: boolean;
-        stopped: boolean;
-        errored: boolean;
-        startTime: null | number;
-        autoplay: boolean;
-    };
+    status: PlayerStatus;
     time: number;
 }
 
