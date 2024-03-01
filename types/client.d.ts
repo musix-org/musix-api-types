@@ -4,5 +4,5 @@ export interface ClientData {
     readyTimestamp: number | null;
     shard: number[] | null;
     uptime: number | null;
-    guilds?: number[];
+    guilds?: string[];
 }
