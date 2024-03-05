@@ -17,6 +17,7 @@ import {
 import {
     QueueData,
     SetQueueAdd,
+    SetQueueRepeat,
     SetQueueShuffle,
     SetQueueSlice,
     SetQueueSplice
@@ -91,7 +92,12 @@ declare module "musix-api-types" {
         data: SetPlayerPayloadDataType;
     }
 
-    type SetQueuePayloadDataType = SetQueueAdd | SetQueueSplice | SetQueueSlice | SetQueueShuffle;
+    type SetQueuePayloadDataType =
+        | SetQueueAdd
+        | SetQueueSplice
+        | SetQueueSlice
+        | SetQueueShuffle
+        | SetQueueRepeat;
     interface SetQueuePayload {
         type: "setQueue";
         data: SetQueuePayloadDataType;
