@@ -39,6 +39,7 @@ export interface SetQueueSlice extends BaseSetQueue {
 
 export interface SetQueueRepeat extends BaseSetQueue {
     type: "repeat";
+    single?: boolean;
 }
 
 export interface SetQueueShuffle extends BaseSetQueue {
