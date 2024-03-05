@@ -2,7 +2,7 @@ interface Track {
     title: string;
     url: string;
     author: string;
-    thumbnail: string;
+    thumbnail?: string;
     length: number;
     position: number;
     type: string;
