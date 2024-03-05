@@ -50,6 +50,10 @@ declare module "musix-api-types/rest" {
         start: number;
         end: number;
     };
+    //POST queue/repeat
+    type QueueRepeatRequest = {
+        single?: boolean;
+    };
     // GET guilds
     type GuildsResponse = {
         guilds: APIPartialGuild[];
