@@ -14,66 +14,42 @@ declare module "musix-api-types/rest" {
     // GET player
     type PlayerResponse = BaseResponse & PlayerData;
     // POST player/play
-    type PlayerPlayRequest = BaseRequest & {
+    type PlayerPlayRequest = {
         track: Track;
     };
-    type PlayerPlayResponse = BaseResponse & {};
-    // POST player/replay
-    type PlayerReplayRequest = BaseRequest & {};
-    type PlayerReplayResponse = BaseResponse & {};
     // POST player/seek
-    type PlayerSeekRequest = BaseRequest & {
+    type PlayerSeekRequest = {
         time: number;
     };
-    type PlayerSeekResponse = BaseResponse & {};
     // POST player/skip
-    type PlayerSkipRequest = BaseRequest & {
+    type PlayerSkipRequest = {
         index?: number;
     };
-    type PlayerSkipResponse = BaseResponse & {};
-    // POST player/stop
-    type PlayerStopRequest = BaseRequest & {};
-    type PlayerStopResponse = BaseResponse & {};
-    // POST player/previous
-    type PlayerPreviousRequest = BaseRequest & {};
-    type PlayerPreviousResponse = BaseResponse & {};
-    // POST player/pause
-    type PlayerPauseRequest = BaseRequest & {};
-    type PlayerPauseResponse = BaseResponse & {};
-    // POST player/resume
-    type PlayerResumeRequest = BaseRequest & {};
-    type PlayerResumeResponse = BaseResponse & {};
     // PUT player/filter
-    type PlayerFilterRequest = BaseRequest & {
+    type PlayerFilterRequest = {
         filter: string;
         value: boolean | number;
     };
-    type PlayerFilterResponse = BaseResponse & {};
     // GET player/channel
     type PlayerChannelResponse = BaseResponse & {};
     // GET queue
     type QueueResponse = BaseResponse & QueueData;
     // PUT queue
-    type QueuePutRequest = BaseRequest & {
+    type QueuePutRequest = {
         track: Track;
     };
-    type QueuePutResponse = BaseResponse & {};
     // PATCH queue
-    type QueuePatchRequest = BaseRequest & {
+    type QueuePatchRequest = {
         index1: number;
         index2: number;
         item?: Track;
     };
-    type QueuePatchResponse = BaseResponse & {};
+
     // DELETE queue
-    type QueueDeleteRequest = BaseRequest & {
+    type QueueDeleteRequest = {
         start: number;
         end: number;
     };
-    type QueueDeleteResponse = BaseResponse & {};
-    // POST queue/shuffle
-    type QueueShuffleRequest = BaseRequest & {};
-    type QueueShuffleResponse = BaseResponse & {};
     // GET guilds
     type GuildsResponse = {
         guilds: APIPartialGuild[];
