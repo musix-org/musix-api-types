@@ -60,5 +60,4 @@ declare module "musix-api-types/rest" {
     };
     // GET search
     type SearchResponse = Schema$SearchListResponse;
-    type SearchRequestItem = Schema$SearchResult;
 }
