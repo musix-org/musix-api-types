@@ -42,7 +42,6 @@ declare module "musix-api-types/rest" {
     type QueuePatchRequest = {
         index1: number;
         index2?: number;
-        item?: Track;
     };
 
     // DELETE queue

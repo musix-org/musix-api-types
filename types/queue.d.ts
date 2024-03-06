@@ -29,7 +29,6 @@ export interface SetQueueSplice extends BaseSetQueue {
     type: "splice";
     index1: number;
     index2: number;
-    item?: string;
 }
 
 export interface SetQueueSlice extends BaseSetQueue {
