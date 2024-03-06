@@ -41,7 +41,7 @@ declare module "musix-api-types/rest" {
     // PATCH queue
     type QueuePatchRequest = {
         index1: number;
-        index2: number;
+        index2?: number;
         item?: Track;
     };
 
