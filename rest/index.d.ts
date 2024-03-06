@@ -1,6 +1,7 @@
 import { APIPartialGuild } from "discord-api-types/v10";
 import { QueueData, Track } from "../types/queue";
 import { PlayerData } from "../types/player";
+import { youtube_v3 } from "googleapis";
 
 interface BaseRequest {
     id: string;
@@ -57,4 +58,6 @@ declare module "musix-api-types/rest" {
     type GuildsResponse = {
         guilds: APIPartialGuild[];
     };
+    // GET search
+    type SearchResponse = youtube_v3.Schema$SearchListResponse;
 }
