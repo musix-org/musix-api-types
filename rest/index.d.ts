@@ -60,4 +60,5 @@ declare module "musix-api-types/rest" {
     };
     // GET search
     type SearchResponse = youtube_v3.Schema$SearchListResponse;
+    type SearchRequestItem = youtube_v3.Schema$SearchResult;
 }
