@@ -9,6 +9,8 @@ interface Track {
     type: string;
 }
 
+type YoutubeResultTrack = Omit<Track, "length" | "position">;
+
 export interface QueueData {
     id: string;
     tracks: Track[];
@@ -23,7 +25,7 @@ interface BaseSetQueue {
 
 export interface SetQueueAdd extends BaseSetQueue {
     type: "add";
-    track: string;
+    track: Track;
 }
 
 export interface SetQueueSplice extends BaseSetQueue {
