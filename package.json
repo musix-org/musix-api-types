@@ -1,6 +1,6 @@
 {
     "name": "musix-api-types",
-    "version": "0.8.2",
+    "version": "0.9.0",
     "description": "global api types for musix",
     "author": "MatteZ02",
     "license": "MIT",
