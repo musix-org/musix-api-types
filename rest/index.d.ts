@@ -1,7 +1,8 @@
-import { APIPartialGuild } from "discord-api-types/v10";
+import { APIPartialGuild, RESTGetAPICurrentUserResult } from "discord-api-types/v10";
 import { QueueData, Track } from "../types/queue";
 import { PlayerData } from "../types/player";
-import { Schema$SearchListResponse, Schema$SearchResult } from "../external/google/youtube/v3";
+import { Playlist, PlaylistTrack } from "../types/playlist";
+import { Schema$SearchListResponse } from "../external/google/youtube/v3";
 
 interface BaseRequest {
     id: string;
@@ -54,10 +55,26 @@ declare module "musix-api-types/rest" {
     type QueueRepeatRequest = {
         single?: boolean;
     };
+    // GET search
+    type SearchResponse = Schema$SearchListResponse;
     // GET guilds
     type GuildsResponse = {
         guilds: APIPartialGuild[];
     };
-    // GET search
-    type SearchResponse = Schema$SearchListResponse;
+    // GET users/me
+    type UserResponse = RESTGetAPICurrentUserResult;
+    // GET users/me/playlists
+    type UserPlaylistsResponse = { playlists: Playlist[] };
+    // GET playlist/:id
+    type PlaylistResponse = BaseResponse & Playlist;
+    // POST playlist/:id
+    type PlaylistPostRequest = {
+        name: string;
+        tracks: PlaylistTrack[];
+    };
+    // PATCH playlist/:id
+    type PlaylistPatchRequest = {
+        name?: string;
+        tracks?: PlaylistTrack[];
+    };
 }
