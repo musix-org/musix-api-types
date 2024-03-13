@@ -61,6 +61,15 @@ declare module "musix-api-types/rest" {
     type GuildsResponse = {
         guilds: APIPartialGuild[];
     };
+    // GET auth
+    interface AuthResponse extends BaseResponse {
+        id: string;
+        username: string;
+        avatar: string | null;
+        access_token: string;
+        expires_in: number;
+        refresh_token: string;
+    }
     // GET users/me
     type UserResponse = RESTGetAPICurrentUserResult;
     // GET users/me/playlists
