@@ -1,4 +1,4 @@
-import { ClientData } from "./types/client";
+import { ClientData, VoiceStateUpdateData } from "./types/client";
 import {
     PlayerData,
     Players,
@@ -38,7 +38,8 @@ export type PayloadType =
     | "playerUpdate"
     | "queueUpdate"
     | "systemStatusUpdate"
-    | "shardStatusUpdate";
+    | "shardStatusUpdate"
+    | "voiceStateUpdate";
 
 export type SetPayloadtype = "setPlayer" | "setQueue";
 /*{
@@ -59,7 +60,8 @@ declare module "musix-api-types" {
         | QueueData
         | SystemData
         | ShardsData
-        | AuthenticationData;
+        | AuthenticationData
+        | VoiceStateUpdateData;
 
     interface Payload {
         type: PayloadType;
