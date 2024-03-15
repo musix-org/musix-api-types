@@ -25,7 +25,7 @@ interface BaseSetQueue {
 
 export interface SetQueueAdd extends BaseSetQueue {
     type: "add";
-    track: Track;
+    track: Omit<Track, "position">;
 }
 
 export interface SetQueueSplice extends BaseSetQueue {
