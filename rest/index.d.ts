@@ -38,7 +38,7 @@ declare module "musix-api-types/rest" {
     type QueueResponse = BaseResponse & QueueData;
     // PUT queue
     type QueuePutRequest = {
-        track: Track;
+        track: Track | Track[];
     };
     // PATCH queue
     type QueuePatchRequest = {
