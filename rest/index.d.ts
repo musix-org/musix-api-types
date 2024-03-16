@@ -48,8 +48,7 @@ declare module "musix-api-types/rest" {
 
     // DELETE queue
     type QueueDeleteRequest = {
-        start: number;
-        end: number;
+        pos: number;
     };
     //POST queue/repeat
     type QueueRepeatRequest = {
