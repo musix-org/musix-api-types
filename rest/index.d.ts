@@ -13,53 +13,6 @@ interface BaseResponse {
 }
 
 declare module "musix-api-types/rest" {
-    // GET player
-    type PlayerResponse = BaseResponse & PlayerData;
-    // POST player/play
-    type PlayerPlayRequest = {
-        track: Track;
-    };
-    // POST player/seek
-    type PlayerSeekRequest = {
-        time: number;
-    };
-    // POST player/skip
-    type PlayerSkipRequest = {
-        index?: number;
-    };
-    // PUT player/filter
-    type PlayerFilterRequest = {
-        filter: string;
-        value: boolean | number;
-    };
-    // GET player/channel
-    type PlayerChannelResponse = BaseResponse & {};
-    // GET queue
-    type QueueResponse = BaseResponse & QueueData;
-    // PUT queue
-    type QueuePutRequest = {
-        tracks: Track[];
-    };
-    // PATCH queue
-    type QueuePatchRequest = {
-        index1: number;
-        index2?: number;
-    };
-
-    // DELETE queue
-    type QueueDeleteRequest = {
-        pos: number;
-    };
-    //POST queue/repeat
-    type QueueRepeatRequest = {
-        single?: boolean;
-    };
-    // GET search
-    type SearchResponse = Schema$SearchListResponse;
-    // GET guilds
-    type GuildsResponse = {
-        guilds: APIPartialGuild[];
-    };
     // GET auth
     interface AuthResponse extends BaseResponse {
         id: string;
@@ -69,20 +22,124 @@ declare module "musix-api-types/rest" {
         expires_in: number;
         refresh_token: string;
     }
-    // GET users/me
-    type UserResponse = RESTGetAPICurrentUserResult;
-    // GET users/me/playlists
-    type UserPlaylistsResponse = { playlists: Playlist[] };
+
+    // GET guilds
+    // headers: access_token
+    interface GuildsResponse {
+        guilds: APIPartialGuild[];
+    }
+
+    // GET player/:id
+    type PlayerResponse = BaseResponse & PlayerData;
+
+    // POST player/:id/play
+    // headers: access_token
+    // not yet implemented, returns 501
+    interface PlayerPlayRequest {
+        track: Track;
+    }
+
+    // POST player/:id/replay
+    // headers: access_token
+    // no body
+
+    // POST player/:id/seek
+    // headers: access_token
+    interface PlayerSeekRequest {
+        time: number;
+    }
+
+    // POST player/:id/skip
+    // headers: access_token
+    interface PlayerSkipRequest {
+        index?: number;
+    }
+
+    // POST player/:id/stop
+    // headers: access_token
+    // no body
+
+    // POST player/:id/previous
+    // headers: access_token
+    // no body
+
+    // POST player/:id/pause
+    // headers: access_token
+    // no body
+
+    // POST player/:id/resume
+    // headers: access_token
+    // no body
+
+    // PUT player/:id/filter
+    // headers: access_token
+    interface PlayerFilterRequest {
+        filter: string;
+        value: boolean | number;
+    }
+    // GET player/:id/channel
+    // headers: access_token
+    // not yet implemented, returns 501
+    type PlayerChannelResponse = BaseResponse & {}; // TODO: add channel data
+
     // GET playlist/:id
     type PlaylistResponse = BaseResponse & Playlist;
+
     // POST playlist/:id
-    type PlaylistPostRequest = {
+    // headers: access_token
+    interface PlaylistPostRequest {
         name: string;
         tracks: PlaylistTrack[];
-    };
+    }
+
     // PATCH playlist/:id
-    type PlaylistPatchRequest = {
+    // headers: access_token
+    interface PlaylistPatchRequest {
         name?: string;
         tracks?: PlaylistTrack[];
-    };
+    }
+
+    // DELETE playlist/:id
+    // headers: access_token
+    // no body
+
+    // GET queue/:id
+    // headers: access_token
+    type QueueResponse = BaseResponse & QueueData;
+
+    // PUT queue/:id
+    // headers: access_token
+    interface QueuePutRequest {
+        tracks: Track[];
+    }
+
+    // PATCH queue/:id
+    // headers: access_token
+    interface QueuePatchRequest {
+        index1: number;
+        index2?: number;
+    }
+
+    // DELETE queue/:id
+    // headers: access_token
+    interface QueueDeleteRequest {
+        pos: number;
+    }
+
+    //POST queue/:id/repeat
+    // headers: access_token
+    interface QueueRepeatRequest {
+        single?: boolean;
+    }
+
+    // GET search
+    type SearchResponse = Schema$SearchListResponse;
+
+    // GET users/me
+    // headers: access_token
+    type UserResponse = RESTGetAPICurrentUserResult;
+
+    // GET users/me/playlists
+    // headers: access_token
+    type UserPlaylistsResponse = { playlists: Playlist[] };
 }
